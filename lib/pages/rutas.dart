@@ -1,7 +1,9 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:proyecto_ciclista/services/servicios_firebase.dart';
 
 class Rutas extends StatelessWidget {
-  const Rutas({super.key});
+  Rutas({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -10,7 +12,9 @@ class Rutas extends StatelessWidget {
         title: const Text('Rutas'),
         centerTitle: true,
         backgroundColor: Colors.black,
-      )
+      ),
+
+      
     );
   }
 }

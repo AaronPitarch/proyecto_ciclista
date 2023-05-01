@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "67363314491",
+    "project_id": "proyectociclista-6e820",
+    "storage_bucket": "proyectociclista-6e820.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:67363314491:android:067715bc7f42ecf999351e",
+        "android_client_info": {
+          "package_name": "com.example.proyecto_ciclista"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "67363314491-p05molk5e969qe25dt1gj7uf5peq7fqu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyASFK4C9Dl7Mua425SlJdn0SgKjaNdHHzE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "67363314491-p05molk5e969qe25dt1gj7uf5peq7fqu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
