@@ -4,6 +4,9 @@
         android:label="proyecto_ciclista"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
+
+        <meta-data android:name="com.google.android.geo.API_KEY"
+               android:value="AIzaSyAAOFH6PIBBYxNk3M-NwG1cbtPhnpFt1vU"/>
         <activity
             android:name=".MainActivity"
             android:exported="true"

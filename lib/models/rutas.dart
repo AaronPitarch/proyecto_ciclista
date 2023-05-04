@@ -1,4 +1,4 @@
-class Rutas {
+class Ruta {
   final String titulo;
   final String descripcion;
   final String alternativo;
@@ -8,7 +8,7 @@ class Rutas {
   final int puntos;
   final String imagen;
 
-  Rutas ({
+  Ruta ({
   required this.titulo,
   required this.descripcion,
   required this.alternativo,
