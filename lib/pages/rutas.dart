@@ -15,6 +15,7 @@ class Rutas extends StatelessWidget {
         backgroundColor: Colors.black,
       ),
 
+/*
       body: Container(
         child: FutureBuilder<List<Ruta>>(
           future: RutasService.getAllRutas(),
@@ -93,7 +94,7 @@ class Rutas extends StatelessWidget {
             }
           },
         ),
-      ),
+      ), */
     );
   }
 }

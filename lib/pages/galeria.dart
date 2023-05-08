@@ -13,16 +13,19 @@ class Galeria extends StatelessWidget {
         backgroundColor: Colors.black,
       ),
 
+
+    /* Lista de imagenes desde carpeta data 
       body: GridView.extent(
         maxCrossAxisExtent: 150.0,
         padding: const EdgeInsets.all(5.0),
         mainAxisSpacing: 5.0,
         crossAxisSpacing: 5.0,
         children: _imageList,
-        ),
+        ),*/
     );
   }
 
+/*
   List<Widget> get _imageList {
     List<Widget> listImages = [];
     
@@ -33,4 +36,5 @@ class Galeria extends StatelessWidget {
 
     return listImages;
   }
+  */
 }

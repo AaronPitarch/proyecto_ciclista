@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:proyecto_ciclista/models/Character.dart';
 import 'package:proyecto_ciclista/provider/usuario_provider.dart';
+import 'package:proyecto_ciclista/services/usuarios_service.dart';
+
+import '../models/usuario.dart';
 
 class Usuarios extends StatelessWidget {
   const Usuarios({super.key});
@@ -18,35 +21,44 @@ class Usuarios extends StatelessWidget {
         backgroundColor: Colors.black,
       ),
 
-      body: FutureBuilder(
-        // Es donde vamos a recibir los datos de tipo Future
-        future: http.getPersonajes(),
-        builder: (BuildContext context, AsyncSnapshot<List<Character>> snapshot){
-          // 1- Comprobar si ya tenemos los datos o no
-          if(snapshot.hasData){
-            // Pintar la lista de personajes
-            List<Character> chars = snapshot.data!;
-            // Ahora iteramos la lista y pintamos un card por cada elemento
-            return ListView(
-              children: chars.map((Character char) => 
-                  Card(
-                    clipBehavior: Clip.antiAlias,
-                    child: Column(
-                      children: [
-                        Image(image: NetworkImage(char.image ?? ''),
-                          // double.infinity es lo max que pueda dentro del contenedor
-                          width: double.infinity,
-                          fit: BoxFit.cover,
-                        ),
-                        
-                        ListTile(
-                          title: Text(char.name!),
-                          subtitle: Text(char.location!.name!),
-                        )
-                      ],
+      body: FutureBuilder<List<Usuario>>(
+        future: UsuariosService.todosUsuarios(),
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.done) {
+            if (snapshot.hasData) {
+              List<Usuario> usuarios = snapshot.data!;
+              return ListView.builder(
+                itemCount: usuarios.length,
+                itemBuilder: (context, index) {
+
+                  Widget icono;
+                    if (index == 0) {
+                      icono = const Icon(Icons.emoji_events, color: Colors.yellow);
+                    } else if (index == 1) {
+                      icono = const Icon(Icons.emoji_events, color: Colors.grey);
+                    } else if (index == 2) {
+                      icono = const Icon(Icons.emoji_events, color: Colors.brown);
+                    } else {
+                      icono = const SizedBox(width: 24); // Espacio en blanco si no está en el top 3
+                    }
+
+                  return Card(
+                    child: ListTile(
+                      leading: CircleAvatar(
+                        backgroundImage: NetworkImage(usuarios[index].imagen),
+                      ),
+                      title: Text(usuarios[index].nombre),
+                      subtitle: Text('Puntos: ${usuarios[index].puntos}'),
+                      trailing: icono,
                     ),
-                  )).toList(),
-            );
+                  );
+                },
+              );
+            } else if (snapshot.hasError) {
+              return const Center(
+                child: Text('Error al obtener usuarios'),
+              );
+            }
           }
 
           return const Center(
