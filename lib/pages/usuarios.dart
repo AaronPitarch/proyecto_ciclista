@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:proyecto_ciclista/models/Character.dart';
-import 'package:proyecto_ciclista/provider/usuario_provider.dart';
 import 'package:proyecto_ciclista/services/usuarios_service.dart';
 
 import '../models/usuario.dart';
@@ -11,7 +9,7 @@ class Usuarios extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    final HttpService http = HttpService();
+    //final HttpService http = HttpService();
     //List<Usuario> listaUsuarios = [];
 
     return Scaffold(

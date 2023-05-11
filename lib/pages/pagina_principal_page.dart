@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide NavigationDrawer;
 import 'package:proyecto_ciclista/pages/drawer/navigation_drawer.dart';
 
 import '../models/noticia.dart';

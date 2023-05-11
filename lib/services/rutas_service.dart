@@ -6,6 +6,7 @@ class RutasService {
 
   static Future<List<Ruta>> getAllRutas() async {
     QuerySnapshot snapshot = await rutasCollection.orderBy('fecha', descending: true).get();
+    
     return snapshot.docs.map((doc) => Ruta(
       titulo: doc['titulo'],
       descripcion: doc['descripcion'],
